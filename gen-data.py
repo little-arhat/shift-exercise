@@ -20,6 +20,7 @@ for i in xrange(100000):
     trip['uuid'] = str(uuid.uuid4())
     if random.randint(0,1) == 1:
         shift = shifts[random.randint(0, len(shifts) - 1)]
+        trip['driverId'] = shift['driverId']
         trip['start'] = shift['start'] + shift['end'] / 2
         trip['end'] = shift['end']
     else:
