@@ -5,9 +5,6 @@ import random, ujson, uuid
 shift_file = open('test-shifts.txt', 'w')
 trip_file = open('test-trips.txt', 'w')
 
-def random_driver_id():
-    return random.randint(0, 10000000)
-
 def get_shift():
     result = {}
     result['driverId'] = str(uuid.uuid4())
