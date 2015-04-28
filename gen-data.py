@@ -18,14 +18,15 @@ trips = []
 for i in xrange(100000):
     trip = {}
     trip['uuid'] = str(uuid.uuid4())
+    shift = shifts[random.randint(0, len(shifts) - 1)]
     if random.randint(0,1) == 1:
-        shift = shifts[random.randint(0, len(shifts) - 1)]
         trip['driverId'] = shift['driverId']
         trip['start'] = shift['start'] + shift['end'] / 2
         trip['end'] = shift['end']
     else:
         trip['start'] = random.randint(0, 10000000)
         trip['end'] = trip['start'] + 100
+        trip['driverId'] = shift['driverId']
         
     trips.append(trip)
 
