@@ -13,9 +13,9 @@ def get_shift():
     return result
 
 
-shifts = [get_shift() for i in xrange(100000)]
+shifts = [get_shift() for i in range(100000)]
 trips = []
-for i in xrange(100000):
+for i in range(100000):
     trip = {}
     trip['uuid'] = str(uuid.uuid4())
     shift = shifts[random.randint(0, len(shifts) - 1)]
