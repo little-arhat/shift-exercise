@@ -20,9 +20,9 @@ with open('test-shifts.txt', 'w') as shift_file:
             trip = {}
             trip['uuid'] = str(uuid.uuid4())
             shift = shifts[random.randint(0, len(shifts) - 1)]
-            if random.randint(0,1000) == 1:
+            if random.randint(0,1000) != 1:
                 trip['driverId'] = shift['driverId']
-                trip['start'] = shift['start'] + shift['end'] / 2
+                trip['start'] = (shift['start'] + shift['end']) // 2
                 trip['end'] = shift['end']
             else:
                 trip['driverId'] = shift['driverId']
