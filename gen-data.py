@@ -31,6 +31,7 @@ with open('test-shifts.txt', 'w') as shift_file:
 
             trips.append(trip)
 
+        shifts = sorted(shifts, key=lambda x:x['start'])
+        trips = sorted(trips, key=lambda x:x['start'])
         shift_file.writelines([json.dumps(shift) + '\n' for shift in shifts])
         trip_file.writelines([json.dumps(trip) + '\n' for trip in trips])
-
